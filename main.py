@@ -1,7 +1,7 @@
 import pygame
 import sys
 
-size = width, height = 2560, 1600
+size = width, height = 320, 240
 black = 0, 0, 0
 
 def main():
