@@ -12,7 +12,7 @@ def main():
     active = False
     text = ''
     done = False
-
+    pg.display.set_caption("Project")
     while not done:
         for event in pg.event.get():
             if event.type == pg.QUIT:
