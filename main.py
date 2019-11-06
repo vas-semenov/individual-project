@@ -10,7 +10,7 @@ def main():
     gameover = False
     while not gameover:
         for event in pygame.event.get():
-            if event.type == pygame.quit():
+            if event.type == pygame.quit:
                 gameover = True
         screen.fill(black)
         pygame.display.flip()
