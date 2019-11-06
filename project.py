@@ -30,7 +30,7 @@ def main():
                 if active:
                     if event.key == pg.K_RETURN:
                         massiv = text.split(" ")
-                        print(*massiv)
+                        print(massiv)
                         text = ''
                     elif event.key == pg.K_BACKSPACE:
                         text = text[:-1]
