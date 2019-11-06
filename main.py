@@ -10,6 +10,7 @@ color_active = pygame.Color(230, 192, 59)
 
 pygame.init()
 screen = pygame.display.set_mode(size)
+pygame.display.set_caption("INDIVIDUAL PROJECT!!!")
 font = pygame.font.Font(None, 32)
 clock = pygame.time.Clock()
 x_input = 100
