@@ -1,5 +1,5 @@
 import pygame as pg
-
+massiv = []
 
 def main():
     screen = pg.display.set_mode((640, 480))
@@ -29,7 +29,8 @@ def main():
             if event.type == pg.KEYDOWN:
                 if active:
                     if event.key == pg.K_RETURN:
-                        print(text)
+                        massiv = text.split(" ")
+                        print(*massiv)
                         text = ''
                     elif event.key == pg.K_BACKSPACE:
                         text = text[:-1]
