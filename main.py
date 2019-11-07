@@ -1,6 +1,6 @@
 import pygame
 import sys
-
+# названия переменных измени гений. как мы это презентовать будем?
 massiv = []
 
 size = width, height = 492, 600
@@ -18,6 +18,11 @@ y_input = 100
 width_input = 292
 height_input = 32
 input_box = pygame.Rect(x_input, y_input, width_input, height_input)
+box_1 = pygame.Rect(x_input, y_input + 42, width_input, height_input)
+box_2 = pygame.Rect(x_input, y_input + 84, width_input, height_input)
+box_3 = pygame.Rect(x_input, y_input + 126, width_input, height_input)
+box_ishodnik = pygame.Rect(x_input, y_input - 42, width_input, height_input)
+box_final = pygame.Rect(x_input, y_input + 252, width_input, height_input)
 gameover = False
 color = color_inactive
 active = False
@@ -25,8 +30,10 @@ text = ''
 
 ebani_solve = False
 
+
 def ebani_liniu(x, y, w, h):
     pygame.draw.line(screen, (255, 255, 255), (x + w / 2 - 1, y), (x + w / 2 - 1, y + h), 2)
+
 
 while not gameover:
     for event in pygame.event.get():
@@ -43,8 +50,7 @@ while not gameover:
                 if event.key == pygame.K_RETURN:
                     massiv = text.split(" ")
                     print(*massiv)
-                    #text = ''
-
+                    # text = ''
                     ebani_solve = True
 
                 elif event.key == pygame.K_BACKSPACE:
@@ -54,9 +60,45 @@ while not gameover:
     screen.fill(black)
     txt_surface = font.render(text, True, color)
     input_box.w = width_input
-
+    # начало отрисовки
     if ebani_solve:
+        pygame.draw.rect(screen, color, box_ishodnik, 2)
+        screen.blit(font.render(text, True, (color_active)), (x_input + 5, y_input - 37))
         ebani_liniu(x_input, y_input, width_input, height_input)
+        pygame.draw.rect(screen, color, box_1, 2)
+        screen.blit(font.render(text, True, (color_active)), (x_input + 5, y_input + 47))
+        ebani_liniu(x_input, y_input + 42, width_input, height_input)  # box 1
+        ebani_liniu(x_input, y_input + 42, width_input / 2 + 2, height_input)  # box 1
+        ebani_liniu(x_input, y_input + 42, width_input * 1.5 - 2, height_input)  # box 1
+        pygame.draw.rect(screen, color, box_2, 2)
+        screen.blit(font.render(text, True, (color_active)), (x_input + 5, y_input + 90))
+        ebani_liniu(x_input, y_input + 84, width_input, height_input)  # box 2
+        ebani_liniu(x_input, y_input + 84, width_input / 2 + 2, height_input)  # box 2
+        ebani_liniu(x_input, y_input + 84, width_input * 1.5 - 2, height_input)  # box 2
+        ebani_liniu(x_input, y_input + 84, width_input / 4 + 2, height_input)  # box 2
+        ebani_liniu(x_input, y_input + 84, width_input * 1.75 - 2, height_input)  # box 2
+        ebani_liniu(x_input, y_input + 84, width_input / 2 + 72, height_input)  # box 2
+        ebani_liniu(x_input, y_input + 84, width_input * 1.25 - 2, height_input)  # box 2
+        pygame.draw.rect(screen, color, box_3, 2)
+        screen.blit(font.render(text, True, (color_active)), (x_input + 5, y_input + 133))
+        ebani_liniu(x_input, y_input + 126, width_input, height_input)  # box 3
+        ebani_liniu(x_input, y_input + 126, width_input / 2 + 2, height_input)  # box 3
+        ebani_liniu(x_input, y_input + 126, width_input * 1.5 - 2, height_input)  # box 3
+        ebani_liniu(x_input, y_input + 126, width_input / 4 + 2, height_input)  # box 3
+        ebani_liniu(x_input, y_input + 126, width_input * 1.75 - 2, height_input)  # box 3
+        ebani_liniu(x_input, y_input + 126, width_input / 2 + 72, height_input)  # box 3
+        ebani_liniu(x_input, y_input + 126, width_input * 1.25 - 2, height_input)  # box 3
+        ebani_liniu(x_input, y_input + 126, width_input / 2 + 72, height_input)  # box 3
+        ebani_liniu(x_input, y_input + 126, width_input * 1.25 - 2, height_input)  # box 3
+        ebani_liniu(x_input, y_input + 126, width_input / 16 + 20, height_input)  # box 3
+        ebani_liniu(x_input, y_input + 126, width_input / 16 + 92, height_input)  # box 3
+        ebani_liniu(x_input, y_input + 126, width_input / 16 + 165, height_input)  # box 3
+        ebani_liniu(x_input, y_input + 126, width_input * 1.25 - 38, height_input)  # box 3
+        ebani_liniu(x_input, y_input + 126, width_input * 1.25 + 35, height_input)  # box 3
+        ebani_liniu(x_input, y_input + 126, width_input * 0.875, height_input)  # box 3
+        ebani_liniu(x_input, y_input + 126, width_input * 1.875 - 2, height_input)  # box 3
+        ebani_liniu(x_input, y_input + 126, width_input * 1.675 - 15, height_input)  # box 3
+        pygame.draw.rect(screen, color, box_final, 2)
 
     screen.blit(txt_surface, (input_box.x + 5, input_box.y + 5))
     pygame.draw.rect(screen, color, input_box, 2)
