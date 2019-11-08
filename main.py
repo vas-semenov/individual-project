@@ -99,7 +99,7 @@ while not gameover:
         ebani_liniu(x_input, y_input, width_input * 1.75 - 2, height_input, color)  # box 3
         new_obj(250)
         ebani_liniu(x_input, y_input, width_input * 1.875 - 2, height_input, color)  # box 3
-        new_obj(250)
+        new_obj(500)
 
         pygame.draw.rect(screen, color, box_1, 2)
         new_obj(250)
@@ -118,7 +118,7 @@ while not gameover:
         ebani_liniu(x_input, y_input + 42, width_input * 1.5 - 2, height_input, color)  # box 1
         new_obj(250)
         ebani_liniu(x_input, y_input + 42, width_input * 1.75 - 2, height_input, color)  # box 2
-        new_obj(250)
+        new_obj(500)
 
         pygame.draw.rect(screen, color, box_2, 2)
         new_obj(250)
