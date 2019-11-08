@@ -1,6 +1,6 @@
 import pygame
 import sys
-# названия переменных измени гений. как мы это презентовать будем?
+
 massiv = []
 
 size = width, height = 492, 600
@@ -41,6 +41,10 @@ def update_screen():
     pygame.draw.rect(screen, color, input_box, 2)
     pygame.display.flip()
 
+def new_obj(time):
+    pygame.time.wait(time)
+    pygame.display.update()
+
 while not gameover:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -63,60 +67,81 @@ while not gameover:
                     screen.fill(black)
                 else:
                     text += event.unicode
-    # начало отрисовки
+
     if ebani_solve:
-        ebani_liniu(x_input, y_input, width_input, height_input, color)  # box 3
-        ebani_liniu(x_input, y_input, width_input / 2 + 2, height_input, color)  # box 3
-        ebani_liniu(x_input, y_input, width_input * 1.5 - 2, height_input, color)  # box 3
-        ebani_liniu(x_input, y_input, width_input / 4 + 2, height_input, color)  # box 3
-        ebani_liniu(x_input, y_input, width_input * 1.75 - 2, height_input, color)  # box 3
-        ebani_liniu(x_input, y_input, width_input / 2 + 72, height_input, color)  # box 3
-        ebani_liniu(x_input, y_input, width_input * 1.25 - 2, height_input, color)  # box 3
-        ebani_liniu(x_input, y_input, width_input / 2 + 72, height_input, color)  # box 3
-        ebani_liniu(x_input, y_input, width_input * 1.25 - 2, height_input, color)  # box 3
+
         ebani_liniu(x_input, y_input, width_input / 16 + 20, height_input, color)  # box 3
+        new_obj(250)
+        ebani_liniu(x_input, y_input, width_input / 4 + 2, height_input, color)  # box 3
+        new_obj(250)
         ebani_liniu(x_input, y_input, width_input / 16 + 92, height_input, color)  # box 3
+        new_obj(250)
+        ebani_liniu(x_input, y_input, width_input / 2 + 2, height_input, color)  # box 3
+        new_obj(250)
         ebani_liniu(x_input, y_input, width_input / 16 + 165, height_input, color)  # box 3
-        ebani_liniu(x_input, y_input, width_input * 1.25 - 38, height_input, color)  # box 3
-        ebani_liniu(x_input, y_input, width_input * 1.25 + 35, height_input, color)  # box 3
+        new_obj(250)
+        ebani_liniu(x_input, y_input, width_input / 2 + 72, height_input, color)  # box 3
+        new_obj(250)
         ebani_liniu(x_input, y_input, width_input * 0.875, height_input, color)  # box 3
-        ebani_liniu(x_input, y_input, width_input * 1.875 - 2, height_input, color)  # box 3
+        new_obj(250)
+        ebani_liniu(x_input, y_input, width_input, height_input, color)  # box 3
+        new_obj(250)
+        ebani_liniu(x_input, y_input, width_input * 1.25 - 38, height_input, color)  # box 3
+        new_obj(250)
+        ebani_liniu(x_input, y_input, width_input * 1.25 - 2, height_input, color)  # box 3
+        new_obj(250)
+        ebani_liniu(x_input, y_input, width_input * 1.25 + 35, height_input, color)  # box 3
+        new_obj(250)
+        ebani_liniu(x_input, y_input, width_input * 1.5 - 2, height_input, color)  # box 3
+        new_obj(250)
         ebani_liniu(x_input, y_input, width_input * 1.675 - 15, height_input, color)  # box 3
-        pygame.time.wait(500)
-        pygame.display.update()
+        new_obj(500)
+        ebani_liniu(x_input, y_input, width_input * 1.75 - 2, height_input, color)  # box 3
+        new_obj(250)
+        ebani_liniu(x_input, y_input, width_input * 1.875 - 2, height_input, color)  # box 3
+        new_obj(250)
 
         pygame.draw.rect(screen, color, box_1, 2)
+        new_obj(250)
         screen.blit(font.render(text, True, (color)), (x_input + 5, y_input + 47))
-        ebani_liniu(x_input, y_input + 42, width_input, height_input, color)  # box 1
-        ebani_liniu(x_input, y_input + 42, width_input / 2 + 2, height_input, color)  # box 1
-        ebani_liniu(x_input, y_input + 42, width_input * 1.5 - 2, height_input, color)  # box 1
+        new_obj(250)
         ebani_liniu(x_input, y_input + 42, width_input / 4 + 2, height_input, color)  # box 2
-        ebani_liniu(x_input, y_input + 42, width_input * 1.75 - 2, height_input, color)  # box 2
+        new_obj(250)
+        ebani_liniu(x_input, y_input + 42, width_input / 2 + 2, height_input, color)  # box 1
+        new_obj(250)
         ebani_liniu(x_input, y_input + 42, width_input / 2 + 72, height_input, color)  # box 2
+        new_obj(250)
+        ebani_liniu(x_input, y_input + 42, width_input, height_input, color)  # box 1
+        new_obj(250)
         ebani_liniu(x_input, y_input + 42, width_input * 1.25 - 2, height_input, color)  # box 2
-        pygame.time.wait(500)
-        pygame.display.update()
+        new_obj(500)
+        ebani_liniu(x_input, y_input + 42, width_input * 1.5 - 2, height_input, color)  # box 1
+        new_obj(250)
+        ebani_liniu(x_input, y_input + 42, width_input * 1.75 - 2, height_input, color)  # box 2
+        new_obj(250)
 
         pygame.draw.rect(screen, color, box_2, 2)
+        new_obj(250)
         screen.blit(font.render(text, True, (color)), (x_input + 5, y_input + 89))
-        ebani_liniu(x_input, y_input + 84, width_input, height_input, color)  # box 2
+        new_obj(250)
         ebani_liniu(x_input, y_input + 84, width_input / 2 + 2, height_input, color)  # box 2
+        new_obj(250)
+        ebani_liniu(x_input, y_input + 84, width_input, height_input, color)  # box 2
+        new_obj(250)
         ebani_liniu(x_input, y_input + 84, width_input * 1.5 - 2, height_input, color)  # box 2
-        pygame.time.wait(500)
-        pygame.display.update()
-
+        new_obj(500)
 
         pygame.draw.rect(screen, color, box_3, 2)
+        new_obj(250)
         screen.blit(font.render(text, True, (color)), (x_input + 5, y_input + 131))
+        new_obj(250)
         ebani_liniu(x_input, y_input + 126, width_input, height_input, color)
-        pygame.time.wait(500)
-        pygame.display.update()
+        new_obj(500)
 
         pygame.draw.rect(screen, color, box_4, 2)
+        new_obj(250)
         screen.blit(font.render(text, True, (color)), (x_input + 5, y_input + 173))
-        pygame.time.wait(500)
-        pygame.display.update()
-
+        new_obj(500)
 
         while not gameover:
             for event in pygame.event.get():
