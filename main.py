@@ -59,7 +59,7 @@ while not gameover:
             if active:
                 if event.key == pygame.K_RETURN:
                     massiv = text.split(" ")
-                    print(*massiv)
+                    #print(*massiv)
                     # text = ''
                     ebani_solve = True
                 elif event.key == pygame.K_BACKSPACE:
@@ -95,7 +95,7 @@ while not gameover:
         ebani_liniu(x_input, y_input, width_input * 1.5 - 2, height_input, color)  # box 3
         new_obj(250)
         ebani_liniu(x_input, y_input, width_input * 1.675 - 15, height_input, color)  # box 3
-        new_obj(500)
+        new_obj(250)
         ebani_liniu(x_input, y_input, width_input * 1.75 - 2, height_input, color)  # box 3
         new_obj(250)
         ebani_liniu(x_input, y_input, width_input * 1.875 - 2, height_input, color)  # box 3
@@ -103,44 +103,67 @@ while not gameover:
 
         pygame.draw.rect(screen, color, box_1, 2)
         new_obj(250)
-        screen.blit(font.render(text, True, (color)), (x_input + 5, y_input + 47))
-        new_obj(250)
         ebani_liniu(x_input, y_input + 42, width_input / 4 + 2, height_input, color)  # box 2
+        new_obj(250)
+        screen.blit(font.render(' '.join(sorted(massiv[:2])), True, (color)), (x_input + 5, y_input + 47))
         new_obj(250)
         ebani_liniu(x_input, y_input + 42, width_input / 2 + 2, height_input, color)  # box 1
         new_obj(250)
+        screen.blit(font.render(' '.join(sorted(massiv[:2]) + sorted(massiv[2:4])), True, (color)), (x_input + 5, y_input + 47))
+        new_obj(250)
         ebani_liniu(x_input, y_input + 42, width_input / 2 + 72, height_input, color)  # box 2
+        new_obj(250)
+        screen.blit(font.render(' '.join(sorted(massiv[:2]) + sorted(massiv[2:4]) + sorted(massiv[4:6])), True, (color)), (x_input + 5, y_input + 47))
         new_obj(250)
         ebani_liniu(x_input, y_input + 42, width_input, height_input, color)  # box 1
         new_obj(250)
+        screen.blit(font.render(' '.join(sorted(massiv[:2]) + sorted(massiv[2:4]) + sorted(massiv[4:6]) + sorted(massiv[6:8])), True, (color)), (x_input + 5, y_input + 47))
+        new_obj(250)
         ebani_liniu(x_input, y_input + 42, width_input * 1.25 - 2, height_input, color)  # box 2
-        new_obj(500)
+        new_obj(250)
+        screen.blit(font.render(' '.join(sorted(massiv[:2]) + sorted(massiv[2:4]) + sorted(massiv[4:6]) + sorted(massiv[6:8]) + sorted(massiv[8:10])), True, (color)), (x_input + 5, y_input + 47))
+        new_obj(250)
         ebani_liniu(x_input, y_input + 42, width_input * 1.5 - 2, height_input, color)  # box 1
         new_obj(250)
+        screen.blit(font.render(' '.join(sorted(massiv[:2]) + sorted(massiv[2:4]) + sorted(massiv[4:6]) + sorted(massiv[6:8]) + sorted(massiv[8:10]) + sorted(massiv[10:12])), True, (color)), (x_input + 5, y_input + 47))
+        new_obj(250)
         ebani_liniu(x_input, y_input + 42, width_input * 1.75 - 2, height_input, color)  # box 2
+        new_obj(250)
+        screen.blit(font.render(' '.join(sorted(massiv[:2]) + sorted(massiv[2:4]) + sorted(massiv[4:6]) + sorted(massiv[6:8]) + sorted(massiv[8:10]) + sorted(massiv[10:12]) + sorted(massiv[12:14])), True, (color)), (x_input + 5, y_input + 47))
+        new_obj(250)
+        screen.blit(font.render(' '.join(sorted(massiv[:2]) + sorted(massiv[2:4]) + sorted(massiv[4:6]) + sorted(massiv[6:8]) + sorted(massiv[8:10]) + sorted(massiv[10:12]) + sorted(massiv[12:14]) + sorted(massiv[14:16])), True, (color)), (x_input + 5, y_input + 47))
         new_obj(500)
 
         pygame.draw.rect(screen, color, box_2, 2)
         new_obj(250)
-        screen.blit(font.render(text, True, (color)), (x_input + 5, y_input + 89))
-        new_obj(250)
         ebani_liniu(x_input, y_input + 84, width_input / 2 + 2, height_input, color)  # box 2
+        new_obj(250)
+        screen.blit(font.render(' '.join(sorted(massiv[:4])), True, (color)), (x_input + 5, y_input + 89))
         new_obj(250)
         ebani_liniu(x_input, y_input + 84, width_input, height_input, color)  # box 2
         new_obj(250)
+        screen.blit(font.render(' '.join(sorted(massiv[:4]) + sorted(massiv[4:8])), True, (color)), (x_input + 5, y_input + 89))
+        new_obj(250)
         ebani_liniu(x_input, y_input + 84, width_input * 1.5 - 2, height_input, color)  # box 2
+        new_obj(250)
+        screen.blit(font.render(' '.join(sorted(massiv[:4]) + sorted(massiv[4:8]) + sorted(massiv[8:12])), True, (color)), (x_input + 5, y_input + 89))
+        new_obj(250)
+        screen.blit(font.render(' '.join(sorted(massiv[:4]) + sorted(massiv[4:8]) + sorted(massiv[8:12]) + sorted(massiv[12:16])), True, (color)), (x_input + 5, y_input + 89))
         new_obj(500)
+
 
         pygame.draw.rect(screen, color, box_3, 2)
         new_obj(250)
-        screen.blit(font.render(text, True, (color)), (x_input + 5, y_input + 131))
-        new_obj(250)
         ebani_liniu(x_input, y_input + 126, width_input, height_input, color)
+        new_obj(250)
+        screen.blit(font.render(' '.join(sorted(massiv[:8])), True, (color)), (x_input + 5, y_input + 131))
+        new_obj(250)
+        screen.blit(font.render(' '.join(sorted(massiv[:8]) + sorted(massiv[8:16])), True, (color)), (x_input + 5, y_input + 131))
         new_obj(500)
 
         pygame.draw.rect(screen, color, box_4, 2)
         new_obj(250)
-        screen.blit(font.render(text, True, (color)), (x_input + 5, y_input + 173))
+        screen.blit(font.render(' '.join(sorted(massiv[:16])), True, (color)), (x_input + 5, y_input + 173))
         new_obj(500)
 
         while not gameover:
