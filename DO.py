@@ -105,7 +105,7 @@ while not gameover:
         new_obj(250)
         ebani_liniu(x_input, y_input + 42, width_input / 4 + 2, height_input, color)  # box 2
         new_obj(250)
-        screen.blit(font.render(' '.join(max(massiv[:2])), True, (color)), (x_input + 5, y_input + 47))
+        screen.blit(font.render(' '.join(max(massiv[:2])), True, (color)), (x_input + width_input / 2 - 1 + 5, y_input + 47))
         new_obj(250)
         ebani_liniu(x_input, y_input + 42, width_input / 2 + 2, height_input, color)  # box 1
         new_obj(250)
@@ -142,13 +142,13 @@ while not gameover:
         new_obj(250)
         ebani_liniu(x_input, y_input + 84, width_input, height_input, color)  # box 2
         new_obj(250)
-        screen.blit(font.render(' '.join(max(massiv[:4]) + max(massiv[4:8])), True, (color)), (x_input + 5, y_input + 89))
+        screen.blit(font.render(' '.join(max(massiv[4:8])), True, (color)), (x_input + 5, y_input + 89))
         new_obj(250)
         ebani_liniu(x_input, y_input + 84, width_input * 1.5 - 2, height_input, color)  # box 2
         new_obj(250)
-        screen.blit(font.render(' '.join(max(massiv[:4]) + max(massiv[4:8]) + max(massiv[8:12])), True, (color)), (x_input + 5, y_input + 89))
+        screen.blit(font.render(' '.join(max(massiv[8:12])), True, (color)), (x_input + 5, y_input + 89))
         new_obj(250)
-        screen.blit(font.render(' '.join(max(massiv[:4]) + max(massiv[4:8]) + max(massiv[8:12]) + max(massiv[12:16])), True, (color)), (x_input + 5, y_input + 89))
+        screen.blit(font.render(' '.join(max(massiv[12:16])), True, (color)), (x_input + 5, y_input + 89))
         new_obj(500)
 
 
@@ -156,14 +156,14 @@ while not gameover:
         new_obj(250)
         ebani_liniu(x_input, y_input + 126, width_input, height_input, color)
         new_obj(250)
-        screen.blit(font.render(' '.join(max(massiv[:8])), True, (color)), (x_input + 5, y_input + 131))
+        screen.blit(font.render(' '.join(max(massiv[:8])), True, (color)), (x_input + width_input * 0.25 - 1, y_input + 131))
         new_obj(250)
-        screen.blit(font.render(' '.join(max(massiv[:8]) + max(massiv[8:16])), True, (color)), (x_input + 5, y_input + 131))
+        screen.blit(font.render(' '.join(max(massiv[8:16])), True, (color)), (x_input + width_input * 0.75 - 1, y_input + 131))
         new_obj(500)
 
         pygame.draw.rect(screen, color, box_4, 2)
         new_obj(250)
-        screen.blit(font.render(' '.join(max(massiv[:16])), True, (color)), (x_input + 5, y_input + 173))
+        screen.blit(font.render(' '.join(max(massiv[:16])), True, (color)), (x_input + width_input * 0.5 - 1, y_input + 173))
         new_obj(500)
 
         while not gameover:
