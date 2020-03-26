@@ -32,12 +32,12 @@ text = ''
 ebani_solve = False
 
 
-xCoord = {'0': x_input + width_input * 0.0625 - 8, '1': x_input + width_input * 0.0625 + 12, '2': x_input + width_input * 0.0625 + 30,
+xCoord = {'-1': x_input + width_input * 0.0625 - 28, '0': x_input + width_input * 0.0625 - 8, '1': x_input + width_input * 0.0625 + 12, '2': x_input + width_input * 0.0625 + 30,
           '3': x_input + width_input * 0.0625 + 48, '4': x_input + width_input * 0.0625 + 66, '5': x_input + width_input * 0.0625 + 85,
           '6': x_input + width_input * 0.0625 + 102, '7': x_input + width_input * 0.0625 + 121, '8': x_input + width_input * 0.0625 + 139,
           '9': x_input + width_input * 0.0625 + 157, '10': x_input + width_input * 0.0625 + 175, '11': x_input + width_input * 0.0625 + 197,
           '12': x_input + width_input * 0.0625 + 211, '13': x_input + width_input * 0.0625 + 230, '14': x_input + width_input * 0.0625 + 247,
-          '15': x_input + width_input * 0.0625 + 266}
+          '15': x_input + width_input * 0.0625 + 266, '16': x_input + width_input * 0.0625 + 286}
 
 
 def ebani_liniu(x, y, w, h, color):
@@ -60,40 +60,41 @@ array = []
 
 
 def bin_p():
-    l = 0
-    r = 17
-    mid = 0
+    l = -1
+    r = 16
+    delFlag = []
     while r - l > 1:
-        point = pygame.image.load("bump.png")
-        point.set_colorkey((255, 255, 255))
-        pointRect = point.get_rect(topleft=(300, 400))
-        pointRect.x = xCoord.get(str(mid))
-        pointRect.y = y_input + 90
-        screen.blit(point, pointRect)
-        pygame.display.update()
-        pygame.time.wait(1000)
-        point = pygame.image.load("bump.png")
-        point.set_colorkey((255, 255, 255))
-        pointRect = point.get_rect(center=(300, 400))
-        pointRect.x = xCoord.get(str(l))
-        pointRect.y = y_input + 90
-        screen.blit(point, pointRect)
-        pygame.display.update()
-        pygame.time.wait(1000)
-        point = pygame.image.load("bump.png")
-        point.set_colorkey((255, 255, 255))
-        pointRect = point.get_rect(topleft=(300, 400))
-        pointRect.x = xCoord.get(str(r - 2))
-        pointRect.y = y_input + 90
-        screen.blit(point, pointRect)
-        pygame.display.update()
-        pygame.time.wait(1000)
         mid = (l + r) // 2
+        if len(delFlag) > 0:
+            point = pygame.image.load("bump.png")
+            point.set_colorkey((255, 255, 255))
+            pointRect = point.get_rect(topleft=(300, 400))
+            pointRect.x = xCoord.get(str(delFlag.pop()))
+            pointRect.y = y_input + 90
+            screen.blit(point, pointRect)
+            pygame.display.update()
+            pygame.time.wait(1000)
         if array[mid] == 0:
+            point = pygame.image.load("bump.png")
+            point.set_colorkey((255, 255, 255))
+            pointRect = point.get_rect(topleft=(300, 400))
+            pointRect.x = xCoord.get(str(l))
+            pointRect.y = y_input + 90
+            screen.blit(point, pointRect)
+            pygame.display.update()
+            pygame.time.wait(1000)
             l = mid
         else:
+            point = pygame.image.load("bump.png")
+            point.set_colorkey((255, 255, 255))
+            pointRect = point.get_rect(topleft=(300, 400))
+            pointRect.x = xCoord.get(str(r))
+            pointRect.y = y_input + 90
+            screen.blit(point, pointRect)
+            pygame.display.update()
+            pygame.time.wait(1000)
             r = mid
-
+        delFlag.append(mid)
         point = pygame.image.load("arrowM.png")
         point.set_colorkey((255, 255, 255))
         pointRect = point.get_rect(topleft=(300, 400))
@@ -113,7 +114,7 @@ def bin_p():
         point = pygame.image.load("arrowR.png")
         point.set_colorkey((255, 255, 255))
         pointRect = point.get_rect(topleft=(300, 400))
-        pointRect.x = xCoord.get(str(r - 2))
+        pointRect.x = xCoord.get(str(r))
         pointRect.y = y_input + 90
         screen.blit(point, pointRect)
         pygame.display.update()
