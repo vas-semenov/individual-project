@@ -3,6 +3,7 @@ import sys
 
 massiv = []
 
+
 size = width, height = 492, 600
 black = 52, 52, 54
 color_inactive = pygame.Color(254, 90, 82)
@@ -31,8 +32,17 @@ text = ''
 ebani_solve = False
 
 
+xCoord = {'0': x_input + width_input * 0.0625 - 8, '1': x_input + width_input * 0.0625 + 12, '2': x_input + width_input * 0.0625 + 30,
+          '3': x_input + width_input * 0.0625 + 48, '4': x_input + width_input * 0.0625 + 66, '5': x_input + width_input * 0.0625 + 85,
+          '6': x_input + width_input * 0.0625 + 102, '7': x_input + width_input * 0.0625 + 121, '8': x_input + width_input * 0.0625 + 139,
+          '9': x_input + width_input * 0.0625 + 157, '10': x_input + width_input * 0.0625 + 175, '11': x_input + width_input * 0.0625 + 197,
+          '12': x_input + width_input * 0.0625 + 211, '13': x_input + width_input * 0.0625 + 230, '14': x_input + width_input * 0.0625 + 247,
+          '15': x_input + width_input * 0.0625 + 266}
+
+
 def ebani_liniu(x, y, w, h, color):
     pygame.draw.line(screen, color, (x + w // 2 - 1, y), (x + w // 2 - 1, y + h), 2)
+
 
 def update_screen():
     txt_surface = font.render(text, True, color)
@@ -40,20 +50,75 @@ def update_screen():
     pygame.draw.rect(screen, color, input_box, 2)
     pygame.display.flip()
 
+
 def new_obj(time):
     pygame.time.wait(time)
     pygame.display.update()
 
+
 array = []
+
+
 def bin_p():
     l = 0
     r = 17
-    while (r - l > 1):
+    mid = 0
+    while r - l > 1:
+        point = pygame.image.load("bump.png")
+        point.set_colorkey((255, 255, 255))
+        pointRect = point.get_rect(topleft=(300, 400))
+        pointRect.x = xCoord.get(str(mid))
+        pointRect.y = y_input + 90
+        screen.blit(point, pointRect)
+        pygame.display.update()
+        pygame.time.wait(1000)
+        point = pygame.image.load("bump.png")
+        point.set_colorkey((255, 255, 255))
+        pointRect = point.get_rect(center=(300, 400))
+        pointRect.x = xCoord.get(str(l))
+        pointRect.y = y_input + 90
+        screen.blit(point, pointRect)
+        pygame.display.update()
+        pygame.time.wait(1000)
+        point = pygame.image.load("bump.png")
+        point.set_colorkey((255, 255, 255))
+        pointRect = point.get_rect(topleft=(300, 400))
+        pointRect.x = xCoord.get(str(r - 2))
+        pointRect.y = y_input + 90
+        screen.blit(point, pointRect)
+        pygame.display.update()
+        pygame.time.wait(1000)
         mid = (l + r) // 2
         if array[mid] == 0:
             l = mid
         else:
             r = mid
+
+        point = pygame.image.load("arrowM.png")
+        point.set_colorkey((255, 255, 255))
+        pointRect = point.get_rect(topleft=(300, 400))
+        pointRect.x = xCoord.get(str(mid))
+        pointRect.y = y_input + 90
+        screen.blit(point, pointRect)
+        pygame.display.update()
+        pygame.time.wait(1000)
+        point = pygame.image.load("arrowL.png")
+        point.set_colorkey((255, 255, 255))
+        pointRect = point.get_rect(center=(300, 400))
+        pointRect.x = xCoord.get(str(l))
+        pointRect.y = y_input + 90
+        screen.blit(point, pointRect)
+        pygame.display.update()
+        pygame.time.wait(1000)
+        point = pygame.image.load("arrowR.png")
+        point.set_colorkey((255, 255, 255))
+        pointRect = point.get_rect(topleft=(300, 400))
+        pointRect.x = xCoord.get(str(r - 2))
+        pointRect.y = y_input + 90
+        screen.blit(point, pointRect)
+        pygame.display.update()
+        pygame.time.wait(1000)
+
 
 while not gameover:
     for event in pygame.event.get():
@@ -119,8 +184,8 @@ while not gameover:
         ebani_liniu(x_input, y_input + 42, width_input1 * 1.875 - 2, height_input2, color)  # box 3
         screen.blit(font.render(str(array[14]), True, (color)), (x_input + width_input * 0.0625 + 255, y_input + 47))
         screen.blit(font.render(str(array[15]), True, (color)), (x_input + width_input * 0.0625 + 274, y_input + 47))
+        bin_p()
         new_obj(500)
-
         while not gameover:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
