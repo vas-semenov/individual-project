@@ -4,7 +4,7 @@ using namespace std;
 
 int main() {
 
-    cout << "Здравствуйте!\nВас приветствует программа AUE MA BOY&\nПожалуйста, выберете необходимый Вам алгоритм:\n";
+    cout << "Здравствуйте!\nВас приветствует программа АУЕ МА БОЙ&\nПожалуйста, выберете необходимый Вам алгоритм:\n";
     cout << "1) MERGE SORT\n2) DO\n3) BINARY SEARCH\n";
     string s;
     cin >> s;
@@ -21,5 +21,5 @@ int main() {
         cin >> s;
     }
 
-	return 0;
+    return 0;
 }
