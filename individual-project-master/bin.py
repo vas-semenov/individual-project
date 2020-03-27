@@ -30,13 +30,12 @@ text = ''
 
 ebani_solve = False
 
-xCoord = {'-1': x_input + width_input * 0.0625 - 28, '0': x_input + width_input * 0.0625 - 10, '1': x_input + width_input * 0.0625 + 9, '2': x_input + width_input * 0.0625 + 29,
-          '3': x_input + width_input * 0.0625 + 48, '4': x_input + width_input * 0.0625 + 66, '5': x_input + width_input * 0.0625 + 85,
-          '6': x_input + width_input * 0.0625 + 100, '7': x_input + width_input * 0.0625 + 119, '8': x_input + width_input * 0.0625 + 137,
-          '9': x_input + width_input * 0.0625 + 155, '10': x_input + width_input * 0.0625 + 174, '11': x_input + width_input * 0.0625 + 193,
+xCoord = {'-1': x_input + width_input * 0.0625 - 30, '0': x_input + width_input * 0.0625 - 9, '1': x_input + width_input * 0.0625 + 9, '2': x_input + width_input * 0.0625 + 28,
+          '3': x_input + width_input * 0.0625 + 47, '4': x_input + width_input * 0.0625 + 65, '5': x_input + width_input * 0.0625 + 82,
+          '6': x_input + width_input * 0.0625 + 100, '7': x_input + width_input * 0.0625 + 119, '8': x_input + width_input * 0.0625 + 136,
+          '9': x_input + width_input * 0.0625 + 155, '10': x_input + width_input * 0.0625 + 173, '11': x_input + width_input * 0.0625 + 192,
           '12': x_input + width_input * 0.0625 + 209, '13': x_input + width_input * 0.0625 + 228, '14': x_input + width_input * 0.0625 + 245,
           '15': x_input + width_input * 0.0625 + 264, '16': x_input + width_input * 0.0625 + 284}
-
 
 def ebani_liniu(x, y, w, h, color):
     pygame.draw.line(screen, color, (x + w // 2 - 1, y), (x + w // 2 - 1, y + h), 2)
