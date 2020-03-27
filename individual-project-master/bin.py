@@ -175,7 +175,7 @@ while not gameover:
     if ebani_solve:
         pygame.draw.rect(screen, color, box_1, 2)
         ebani_liniu(x_input, y_input + 42, width_input1 / 16 + 20, height_input2, color)  # box 3
-        screen.blit(font.render(str(array[0]), True, (color)), (x_input + width_input * 0.0625, y_input + 47))
+        screen.blit(font.render(str(array[0]), True, (color)), (x_input + width_input * 0.0625 + 2, y_input + 47))
         ebani_liniu(x_input, y_input + 42, width_input1 / 4 + 2, height_input2, color)  # box 3
         screen.blit(font.render(str(array[1]), True, (color)), (x_input + width_input * 0.0625 + 20, y_input + 47))
         ebani_liniu(x_input, y_input + 42, width_input1 / 16 + 92, height_input2, color)  # box 3
