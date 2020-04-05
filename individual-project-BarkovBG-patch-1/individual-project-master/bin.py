@@ -55,7 +55,7 @@ def new_obj(time):
 
 array = []
 
-time = 200
+time = 500
 
 def bin_p():
     l = -1
@@ -165,7 +165,6 @@ while not gameover:
                         array.append(0)
                     for i in range(16 - massiv[0]):
                         array.append(1)
-                    print(*array)
                     ebani_solve = True
                 elif event.key == pygame.K_BACKSPACE:
                     text = text[:-1]
